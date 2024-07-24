@@ -2,7 +2,7 @@ interface IProps {
 
 }
 
-const Alert = ({} : IProps) => {
+const botton = ({} : IProps) => {
 
     return(
         <div>Alert</div>
@@ -10,4 +10,4 @@ const Alert = ({} : IProps) => {
 
 }
 
-export default Alert
+export default botton
