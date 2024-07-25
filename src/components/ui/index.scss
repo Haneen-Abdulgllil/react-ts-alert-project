@@ -1,0 +1,72 @@
+
+
+$defaultBg: rgb(29 31 32 / 71%);
+$defaultColor: #c8c8c8;
+$defaultBorder: #c8c8c8;
+
+$infoBg: rgb(100 108 255 / 8%);
+$infoColor: #bcc0ff;
+$infoBorder: #646cff;
+
+$warningBg: rgb(255 197 23 / 5%);
+$warningColor: #fcd253;
+$warningBorder: rgba(255 , 213 , 0 , 0.793);
+
+$errorBg: rgb(192 29 29 / 15%);
+$errorColor: #ef8d8dfa;
+$errorBorder: rgba(255 , 25 , 0 , 0.322);
+
+$successBg: rgba(246 , 238 , 9 , 0.127);
+$successColor: #7acf58d6;
+$successBorder: rgba(0 , 255 , 0 , 0.322);
+
+@mixin alert($name , $bgColor , $color ,$borderColor ){
+
+    .#{$name} {
+        border : 2px dotted $borderColor;
+        border-radius: 0.8rem;
+        padding: 1.3rem;
+        background-color: $bgColor;
+        color: $color;
+        margin: 1.3rem;
+
+        .alert-header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+
+            .alert-title{
+                display: flex;
+                align-items: center;
+
+                h4{
+                    margin: 0 1.5rem 0 1.5rem;
+                }
+            }
+
+            .close-icon{
+                border: 1px white;
+                cursor: pointer;
+            }
+         }
+
+        p{
+            margin-top: 1.2rem;
+            font-weight: 0.9rem;
+            line-height: 1.5rem;
+            margin-top: 1.2rem;
+        }
+      
+    }
+}
+
+@include alert("alert-default", $defaultBg, $defaultColor , $defaultBorder);
+@include alert("alert-danger", $errorBg, $errorColor , $errorBorder);
+@include alert("alert-info", $infoBg, $infoColor , $infoBorder);
+@include alert("alert-warning", $warningBg, $warningColor , $warningBorder);
+@include alert("alert-success", $successBg, $successColor , $successBorder);
+   
+
+
+   
+    
